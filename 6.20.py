@@ -1,12 +1,11 @@
 # Convert decimal number to binary
-decimal_number = int(input('Enter decimal number: '))
-binary_rep = []
+number = int(input("Enter decimal number: "))
+original = number
+binary = ""
 
-while decimal_number > 0:
-    binary_rep.append(str(decimal_number % 2))
-    decimal_number //= 2
+while number > 0:
+    remainder = number % 2             #number % 2 daje resztę z dzielenia przez 2, czyli 0 albo 1.
+    binary = str(remainder) + binary
+    number = number // 2
 
-binary_rep.reverse()  # Reverse to get the correct order
-binary_str = ''.join(binary_rep)
-
-print(f'{decimal_number} (10) = {binary_str} (2)')
+print(f"{original}(10) = {binary}(2)")

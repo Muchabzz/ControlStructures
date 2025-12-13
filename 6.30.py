@@ -1,5 +1,7 @@
-# Print a lottery coupon with numbers from 1 to 49
-for i in range(1, 8):
-    for j in range(i, 50, 7):
-        print(j, end=' ')
-    print()
+# Print a lottery coupon (numbers 1 to 49)
+for row in range(1, 8):  # wiersze od 1 do 7
+    num = row
+    while num <= 49:
+        print(num, end=' ')
+        num += 7  # kolejna liczba w tym wierszu jest o 7 większa
+    print()  # nowa linia po każdym wierszu

@@ -1,12 +1,16 @@
 # Find N leading prime numbers
-N = int(input('Enter the number of primes to find: '))
-primes = []
-num = 2
+N = int(input('Enter how many prime numbers to print: '))
 
-while len(primes) < N:
-    is_prime = all(num % i != 0 for i in range(2, int(num**0.5) + 1))
+count = 0   # ile liczb pierwszych już znaleziono
+num = 2     # liczba do sprawdzenia
+
+while count < N:
+    is_prime = True
+    for i in range(2, num):   # sprawdzamy dzielniki od 2 do num-1
+        if num % i == 0:
+            is_prime = False
+            break
     if is_prime:
-        primes.append(num)
+        print(num)
+        count += 1
     num += 1
-
-print(f'Prime numbers: {" ".join(map(str, primes))}')
